@@ -1,0 +1,36 @@
+{
+  "name": "civic-impact-backend",
+  "version": "1.0.0",
+  "description": "Civic Impact - Smart City, Civic Responsibility & Waste Management Platform Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node database/seed.js",
+    "test": "node test/api-test.js"
+  },
+  "keywords": [
+    "civic-impact",
+    "smart-city",
+    "waste-management",
+    "complaints",
+    "sustainability",
+    "full-stack"
+  ],
+  "author": "Civic Impact Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
