@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { complaintAPI } from '../services/api';
+import { complaintAPI, SERVER_BASE_URL } from '../services/api';
 import {
   ShieldAlert,
   MapPin,
@@ -167,7 +167,7 @@ export const ComplaintDetailsPage = () => {
                 </h4>
                 <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-xs">
                   <img
-                    src={`http://localhost:5000${complaint.photo_url}`}
+                    src={`${SERVER_BASE_URL}${complaint.photo_url}`}
                     alt="Complaint"
                     className="w-full h-48 object-cover"
                     onError={(e) => (e.target.style.display = 'none')}

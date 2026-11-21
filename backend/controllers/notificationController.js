@@ -37,7 +37,7 @@ async function markAsRead(req, res) {
     const { id } = req.params;
     const userId = req.user.id;
 
-    await query('UPDATE notifications SET is_read = 1 WHERE id = $1 AND user_id = $2', [id, userId]);
+    await query('UPDATE notifications SET is_read = TRUE WHERE id = $1 AND user_id = $2', [id, userId]);
 
     res.json({
       success: true,
@@ -56,7 +56,7 @@ async function markAllAsRead(req, res) {
   try {
     const userId = req.user.id;
 
-    await query('UPDATE notifications SET is_read = 1 WHERE user_id = $1', [userId]);
+    await query('UPDATE notifications SET is_read = TRUE WHERE user_id = $1', [userId]);
 
     res.json({
       success: true,

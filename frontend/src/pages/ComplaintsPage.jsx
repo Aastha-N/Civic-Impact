@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { complaintAPI } from '../services/api';
+import { complaintAPI, SERVER_BASE_URL } from '../services/api';
 import {
   ShieldAlert,
   PlusCircle,
@@ -203,7 +203,7 @@ export const ComplaintsPage = () => {
                 {c.photo_url && (
                   <div className="w-full h-36 rounded-2xl overflow-hidden bg-slate-100 relative">
                     <img
-                      src={`http://localhost:5000${c.photo_url}`}
+                      src={`${SERVER_BASE_URL}${c.photo_url}`}
                       alt={c.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {

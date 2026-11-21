@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { listingAPI } from '../services/api';
+import { listingAPI, SERVER_BASE_URL } from '../services/api';
 import {
   Gift,
   PlusCircle,
@@ -291,7 +291,7 @@ export const ReuseMarketplacePage = () => {
                 {item.photo_url && (
                   <div className="w-full h-40 rounded-2xl overflow-hidden bg-slate-100">
                     <img
-                      src={`http://localhost:5000${item.photo_url}`}
+                      src={`${SERVER_BASE_URL}${item.photo_url}`}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => (e.target.style.display = 'none')}
@@ -350,7 +350,7 @@ export const ReuseMarketplacePage = () => {
             {selectedListing.photo_url && (
               <div className="w-full h-48 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
                 <img
-                  src={`http://localhost:5000${selectedListing.photo_url}`}
+                  src={`${SERVER_BASE_URL}${selectedListing.photo_url}`}
                   alt={selectedListing.title}
                   className="w-full h-full object-cover"
                 />
